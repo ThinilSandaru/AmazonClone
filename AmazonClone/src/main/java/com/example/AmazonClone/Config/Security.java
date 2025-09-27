@@ -33,7 +33,7 @@ public class Security {
 				.csrf(csrf->csrf.disable())
 				.authorizeHttpRequests(auth->auth
 					.requestMatchers("/public/**").permitAll()
-					.requestMatchers("/admin/").hasRole("admin")
+					.requestMatchers("/customer/").hasRole("customer")
 					.anyRequest().authenticated()
 				)
 				.httpBasic(Customizer.withDefaults())
